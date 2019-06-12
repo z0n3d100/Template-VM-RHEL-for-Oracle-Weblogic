@@ -15,7 +15,7 @@ yum -y groupinstall "X Window System"
 yum -y install aide binutils.x86_64 chrony compat-libcap1.x86_64 compat-libstdc++.x86_64 dejavu-serif-fonts device-mapper-multipath gcc-c++.x86_64 gdm glibc-devel.x86_64 glibc.x86_64 ksh ksh-20120801-26.el7.x86_64 libX11.x86_64 libXau.x86_64 libXaw.x86_64 libXi.x86_64 libXtst.x86_64 libaio-devel.x86_64 libaio.x86_64 libgcc.x86_64 libstdc++-devel.x86_64 libstdc++.x86_64 libxcb.x86_64 m4 make.x86_64 motif motif-devel motif-devel.x86_64 net-tools.x86_64 nfs-utils.x86_64 ntp numactl-devel.x86_64 numactl.x86_64 sg3_utils smartmontools.x86_64 sysstat.x86_64 xauth xhost xorg-x11*
 
 # Package update
-yum -y update
+yum -y update --exclude=WALinuxAgent
 
 # Step : Configuration Services
 systemctl enable ntpd
