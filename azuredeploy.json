@@ -260,7 +260,7 @@
       "name": "[concat(parameters('vmName'),'/', 'InstallRequirementsWeblogic')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'), copyindex())]"
+        "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'),)]"
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
