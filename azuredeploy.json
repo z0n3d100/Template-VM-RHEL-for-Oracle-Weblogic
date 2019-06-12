@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": {
@@ -129,12 +129,12 @@
         "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
       }
     },
-    "rgvNet": {
-      "type": "string",
-      "defaultValue": "Resource Group name of vNet here",
-      "metadata": {
-        "description": "Full name to existing vnet"
-      }
+    //"rgvNet": {
+    //  "type": "string",
+    //  "defaultValue": "Resource Group name of vNet here",
+    //  "metadata": {
+    //    "description": "Full name to existing vnet"
+    //  }
     },
     "existingvNet": {
       "type": "string",
@@ -157,7 +157,8 @@
     "imagePublisher": "RedHat",
     "imageOffer": "RHEL",
     "imageSku": "7.2",
-    "virtualNetworkName": "[resourceId(parameters('rgvNet'),'Microsoft.Network/virtualnetworks', parameters('existingvNet'))]",
+    //"virtualNetworkName": "[resourceId(parameters('rgvNet'),'Microsoft.Network/virtualnetworks', parameters('existingvNet'))]",
+    "virtualNetworkName": "[parameters('existingvNet')]",
     "subnetRef": "[concat(variables('virtualNetworkName'), '/subnets/', parameters('existingSubnetName'))]",
     "nicName": "[concat(uniquestring(parameters('vmName')), 'nic')]",
     "publicIPAddressName": "[concat(uniquestring(parameters('vmName')), 'publicip')]",
@@ -191,7 +192,8 @@
       "location": "[parameters('location')]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
-        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+        //"[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
+        //"[variables('virtualNetworkName')]"
       ],
       "properties": {
         "ipConfigurations": [

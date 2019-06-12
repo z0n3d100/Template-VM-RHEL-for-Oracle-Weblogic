@@ -1,5 +1,5 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": {
@@ -20,12 +20,12 @@
         "description": "Size of Data Disk"
       }
     },
-    "rgvNet": {
-      "type": "string",
-      "defaultValue": "nuell",
-      "metadata": {
-        "description": "Full name to existing vnet"
-      }
+    //"rgvNet": {
+    //  "type": "string",
+    //  "defaultValue": "nuell",
+    //  "metadata": {
+    //    "description": "Full name to existing vnet"
+    //  }
     },
     "existingvNet": {
       "type": "string",
