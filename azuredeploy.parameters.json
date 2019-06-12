@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "networkInterfaceName": {
+      "value": "lnxceapdev511"
+    },
+    "subnetName": {
+      "value": "default"
+    },
+    "virtualNetworkName": {
+      "value": "plantillas-vnet"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.2.2.0/24"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "default",
+          "properties": {
+            "addressPrefix": "10.2.2.0/24"
+          }
+        }
+      ]
+    },
+    "publicIpAddressName": {
+      "value": "lnxceapdev-ip"
+    },
+    "publicIpAddressType": {
+      "value": "Dynamic"
+    },
+    "publicIpAddressSku": {
+      "value": "Basic"
+    },
+    "virtualMachineName": {
+      "value": "lnxceapdev"
+    },
+    "virtualMachineRG": {
+      "value": "plantillas"
+    },
+    "osDiskType": {
+      "value": "StandardSSD_LRS"
+    },
+    "dataDisks": {
+      "value": [
+        {
+          "lun": 0,
+          "createOption": "attach",
+          "caching": "ReadOnly",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "lnxceapdev_DataDisk_0",
+          "storageAccountType": null,
+          "diskSizeGB": null
+        }
+      ]
+    },
+    "dataDiskResources": {
+      "value": [
+        {
+          "name": "lnxceapdev_DataDisk_0",
+          "diskSizeGB": 150,
+          "sku": "StandardSSD_LRS",
+          "creationData": {
+            "createOption": "empty"
+          }
+        }
+      ]
+    },
+    "virtualMachineSize": {
+      "value": "Standard_D3_v2"
+    },
+    "adminUsername": {
+      "value": "claroadmin"
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "plantillasdiag"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "Microsoft.Storage/storageAccounts/plantillasdiag"
+    },
+    "diagnosticsStorageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "diagnosticsStorageAccountKind": {
+      "value": "Storage"
+    }
+  }
+}
