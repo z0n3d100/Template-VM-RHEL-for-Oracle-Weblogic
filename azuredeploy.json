@@ -255,23 +255,23 @@
       }
     },
     {
-      "apiVersion": "2018-06-01",
+      "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('vmName'),'/', 'InstallRequirementsWeblogic')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'), copyindex())]"
       ],
       "properties": {
-        "publisher": "Microsoft.Compute",
-        "type": "CustomScriptExtension",
-        "typeHandlerVersion": "1.7",
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "fileUris": [
-            "https://deploylinux.blob.core.windows.net/extensiones/script_post_install.sh"
-          ],
-          "commandToExecute": "sudo sh script_post_install.sh  "
+        },
+        "protectedSettings": {
+          "fileUris": ["https://demodeployweblogic.blob.core.windows.net/deployweblogic/script_post_install.sh"],
+          "commandToExecute": "sudo sh script_post_install.sh"
         }
       }
     }
