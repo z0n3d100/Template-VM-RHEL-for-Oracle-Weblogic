@@ -1,0 +1,38 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "type": "string",
+      "value": null
+    },
+    "vmName": {
+      "type": "string",
+      "value": null
+    },
+    "VmSize": {
+      "type": "string",
+      "value": "Standard_D4s_v3"
+    },
+    "dataDiskSize": {
+      "type": "int",
+      "metadata": {
+        "description": "Size of Data Disk"
+      }
+    },
+    "existingvNet": {
+      "type": "string",
+      "defaultValue": "Resource ID here",
+      "metadata": {
+        "description": "Full reference to existing vnet"
+      }
+    },
+    "existingSubnetName": {
+      "type": "string",
+      "defaultValue": "Resource ID here",
+      "metadata": {
+        "description": "Full reference to existing subnet"
+      }
+    }
+  }
+}
