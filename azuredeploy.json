@@ -129,7 +129,6 @@
         "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
       }
     },
-    },
     "existingvNet": {
       "type": "string",
       "defaultValue": "Resource name here",
@@ -151,7 +150,6 @@
     "imagePublisher": "RedHat",
     "imageOffer": "RHEL",
     "imageSku": "7.2",
-    //"virtualNetworkName": "[resourceId(parameters('rgvNet'),'Microsoft.Network/virtualnetworks', parameters('existingvNet'))]",
     "virtualNetworkName": "[parameters('existingvNet')]",
     "subnetRef": "[concat(variables('virtualNetworkName'), '/subnets/', parameters('existingSubnetName'))]",
     "nicName": "[concat(uniquestring(parameters('vmName')), 'nic')]",
@@ -185,8 +183,8 @@
       "name": "[variables('nicName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
-        //"[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
+        "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]"
+        //"[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]",
       ],
       "properties": {
         "ipConfigurations": [
