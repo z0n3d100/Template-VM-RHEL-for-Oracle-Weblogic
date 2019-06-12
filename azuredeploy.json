@@ -129,12 +129,6 @@
         "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
       }
     },
-    //"rgvNet": {
-    //  "type": "string",
-    //  "defaultValue": "Resource Group name of vNet here",
-    //  "metadata": {
-    //    "description": "Full name to existing vnet"
-    //  }
     },
     "existingvNet": {
       "type": "string",
