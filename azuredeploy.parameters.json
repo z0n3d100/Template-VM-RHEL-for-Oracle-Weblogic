@@ -20,16 +20,23 @@
         "description": "Size of Data Disk"
       }
     },
+    "rgvNet": {
+      "type": "string",
+      "defaultValue": "nuell",
+      "metadata": {
+        "description": "Full name to existing vnet"
+      }
+    },
     "existingvNet": {
       "type": "string",
-      "defaultValue": "Resource ID here",
+      "defaultValue": "null",
       "metadata": {
         "description": "Full reference to existing vnet"
       }
     },
     "existingSubnetName": {
       "type": "string",
-      "defaultValue": "Resource ID here",
+      "defaultValue": "null",
       "metadata": {
         "description": "Full reference to existing subnet"
       }
