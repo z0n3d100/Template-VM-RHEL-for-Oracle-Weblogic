@@ -271,7 +271,7 @@
         },
         "protectedSettings": {
           "fileUris": ["https://demodeployweblogic.blob.core.windows.net/deployweblogic/script_post_install.sh"],
-          "commandToExecute": "sudo sh script_post_install.sh"
+          "commandToExecute": "sh script_post_install.sh"
         }
       }
     }
