@@ -131,16 +131,16 @@
     },
     "existingvNet": {
       "type": "string",
-      "defaultValue": "Resource ID here",
+      "defaultValue": "Resource name here",
       "metadata": {
-        "description": "Full reference to existing vnet"
+        "description": "Full name to existing vnet"
       }
     },
     "existingSubnetName": {
       "type": "string",
-      "defaultValue": "Resource ID here",
+      "defaultValue": "Resource name here",
       "metadata": {
-        "description": "Full reference to existing subnet"
+        "description": "Full name to existing subnet"
       }
     }
   },
